@@ -21,4 +21,4 @@ spec:
         - containerPort: 3000
         env:
         - name: ACTIVATION_LINK
-          value: http://${IP}/authentication/api/activate
+          value: http://35.197.10.51/authentication/api/activate
