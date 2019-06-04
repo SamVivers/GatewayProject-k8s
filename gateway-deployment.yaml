@@ -20,5 +20,5 @@ spec:
         - containerPort: 80
         readinessProbe:
           httpGet:
-            path: /
+            path: /authentication/login
             port: 80
