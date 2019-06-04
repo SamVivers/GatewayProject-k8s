@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: authentication-service
+  labels: 
+    app: authentication-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: authentication-service
+  template:
+    metadata:
+      labels:
+        app: authentication-service
+    spec:
+      containers:
+      - name: authentication-service
+        image: docker.io/samvivers/authentication-service
+        ports:
+        - containerPort: 3000
+        env:
+        - name: ACTIVATION_LINK
+          value: http://${IP}/authentication/api/activate
