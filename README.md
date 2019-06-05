@@ -33,7 +33,7 @@ once the gateway's load balancer is up it will be assigned an IP address and thi
 ###### cd deployments/
 ###### vim authentication-service-deployment.yaml
 
-and replace my IP address with the one generated for you
+and replace my IP address in the ACTIVATION_LINK environment variable with the one generated for you
 ![alt text](https://raw.githubusercontent.com/SamVivers/images/master/authentication-service-deployment.jpg)
 
 then restart the deployments
@@ -45,3 +45,7 @@ in a browser head to http://"your IP"/authentication/register and sign up
 activate your account via the auto-sent email
 
 head to http://"your IP"/authentication/login and login
+
+# CI with Jenkins
+
+just dont bother...
