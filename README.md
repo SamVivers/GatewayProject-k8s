@@ -54,4 +54,6 @@ head to http://"your IP"/authentication/login and login
 
 # CI with Jenkins
 
-just dont bother...
+is a thing you can do
+
+good luck
