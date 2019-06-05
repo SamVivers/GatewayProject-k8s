@@ -16,30 +16,36 @@ access to GCP (could be build on other cloud services, but the setup will use GC
 open the GCP cloud shell
 
 kick up a kubernetes cluster
-###### gcloud container clusters create [CLUSTER_NAME] --zone [COMPUTE_ZONE]
-
+``` 
+gcloud container clusters create [CLUSTER_NAME] --zone [COMPUTE_ZONE]
+```
 authenticate kubectl for the cluster
-###### gcloud container clusters get-credentials [CLUSTER_NAME]
-
+```
+gcloud container clusters get-credentials [CLUSTER_NAME]
+```
 clone this git repo
-###### git clone https://github.com/SamVivers/GatewayProject-k8s.git
-
+```
+git clone https://github.com/SamVivers/GatewayProject-k8s.git
+```
 run the microservices
-###### kubectl apply -f deployments/
-###### kubectl apply -f services/
-###### kubectl apply -f gateway/
-
+``` 
+kubectl apply -f deployments/
+kubectl apply -f services/
+kubectl apply -f gateway/
+```
 once the gateway's load balancer is up it will be assigned an IP address and this must be put into the authentication-service-deployment.yaml
-###### cd deployments/
-###### vim authentication-service-deployment.yaml
-
+``` 
+cd deployments/
+vim authentication-service-deployment.yaml
+```
 and replace my IP address in the ACTIVATION_LINK environment variable with the one generated for you
 ![alt text](https://raw.githubusercontent.com/SamVivers/images/master/authentication-service-deployment.jpg)
 
 then restart the deployments
-###### cd ../
-###### kubectl apply -f deployments/
-
+```
+cd ../
+kubectl apply -f deployments/
+```
 in a browser head to http://"your IP"/authentication/register and sign up
 
 activate your account via the auto-sent email
