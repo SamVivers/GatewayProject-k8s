@@ -29,11 +29,12 @@ run the microservices
 ###### kubectl apply -f services/
 ###### kubectl apply -f gateway/
 
-one the gateway's load balancer is up it will be assigned an IP address and this must be put into the authentication-service-deployment.yaml
+once the gateway's load balancer is up it will be assigned an IP address and this must be put into the authentication-service-deployment.yaml
 ###### cd deployments/
 ###### vim authentication-service-deployment.yaml
 
 and replace my IP address with the one generated for you
+![alt text](https://raw.githubusercontent.com/SamVivers/images/master/authentication-service-deployment.jpg)
 
 then restart the deployments
 ###### cd ../
