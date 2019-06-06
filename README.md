@@ -54,4 +54,29 @@ head to http://"your IP"/authentication/login and login
 
 # CI with Jenkins
 
+In order to automate updating first start jenkins, in the cloud shell
+```
+kubectl apply -f jenkins/
+```
+Head to the Jenkins load balancer IP address and sign in, initial admin password can be found in the jenkins pod logs
+```
+kubectl logs [JENKINS_POD_NAME]
+```
+After the initial setup, create a job to which will clone the dev branch of the GatewayProject repo, build docker images, push them and apply these images. The shell command will look something like this
+```
+docker-compose build
+docker-compose push
+kubectl --record deployment.apps/[KUBERNETES_SERVICE] set image deployment.v1.apps/[KUBERNETES_SERVICE] [KUBERNETES_SERVICE]=docker.io/[YOUR_DOCKER.IO_ACCOUNT]/[KUBERNETES_SERVICE]:${BUILD_NUMBER}
+```
+Here each of the 13 kubernetes services should be updated (not mongo as it is the default image)
+
+Changes must be made to the docker-compose.yaml cloned from GatewayProject as it currently tags images with my docker.io account. You must also login into your docker.io account before pushing images, I would recomment doing this from the from inside the jenkins pod (it could alternatively be done as part of the Jenkins job)
+```
+kubectl exec -it [JENKINS_POD_NAME] bash
+```
+then
+```
+docker login
+```
+Tick the box on Jenkins allowing GitHub WebHooks, this is already configured in the GatewayProject repo, and when changes to the source code are made you Jenkins job will build
 ![alt text](https://raw.githubusercontent.com/SamVivers/images/master/CI-Lifecycle.jpg)
