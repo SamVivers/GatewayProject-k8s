@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: mongo-service
-        image: docker.io/samvivers/mongo-service
+        image: docker.io/${DOCKER.IO_ACCOUNT}/mongo-service
         ports:
         - containerPort: 3000
