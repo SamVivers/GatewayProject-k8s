@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: aes-encryption-service
-        image: docker.io/samvivers/aes-encryption-service
+        image: docker.io/${DOCKER.IO_ACCOUNT}/aes-encryption-service
         ports:
         - containerPort: 3000
