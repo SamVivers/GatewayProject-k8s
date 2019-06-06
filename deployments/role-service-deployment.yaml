@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: role-service
-        image: docker.io/samvivers/role-service
+        image: docker.io/${DOCKER.IO_ACCOUNT}/role-service
         ports:
         - containerPort: 3000
