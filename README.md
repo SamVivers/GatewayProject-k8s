@@ -78,5 +78,6 @@ then
 ```
 docker login
 ```
-Tick the box on Jenkins allowing GitHub WebHooks, this is already configured in the GatewayProject repo, and when changes to the source code are made you Jenkins job will build
+Tick the box on Jenkins allowing GitHub WebHooks, this is already configured in the GatewayProject repo, and when changes to the source code are made your Jenkins job will build, creating and deploying new docker images to the kubernetes services
+
 ![alt text](https://raw.githubusercontent.com/SamVivers/images/master/CI-Lifecycle.jpg)
