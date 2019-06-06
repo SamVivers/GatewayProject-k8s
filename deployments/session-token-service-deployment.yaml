@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: session-token-service
-        image: docker.io/samvivers/session-token-service
+        image: docker.io/${DOCKER.IO_ACCOUNT}/session-token-service
         ports:
         - containerPort: 3000
