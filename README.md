@@ -53,7 +53,7 @@ vim authentication-service-deployment.yaml
 ```
 and replace IP in the ACTIVATION_LINK environment variable with the one generated for you
 ```
-export IP=[YPUR_IP_ADDRESS]
+export IP=[YOUR_IP_ADDRESS]
 ```
 then restart the deployments
 ```
