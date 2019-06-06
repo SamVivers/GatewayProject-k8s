@@ -13,4 +13,3 @@ RUN tar xzvf ${GCLOUD_LOCAL_DOWNLOAD} -C /opt
 RUN ln -s /opt/google-cloud-sdk/bin/gcloud /usr/bin/gcloud
 RUN gcloud components install -q kubectl
 RUN ln -s /opt/google-cloud-sdk/bin/kubectl /usr/bin/kubectl
-USER jenkins 
