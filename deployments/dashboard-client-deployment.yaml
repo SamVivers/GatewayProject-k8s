@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: dashboard-client
-        image: docker.io/samvivers/dashboard-client
+        image: docker.io/${DOCKER.IO_ACCOUNT}/dashboard-client
         ports:
         - containerPort: 8080
