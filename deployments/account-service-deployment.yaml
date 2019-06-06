@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: account-service
-        image: docker.io/samvivers/account-service
+        image: docker.io/${DOCKER.IO_ACCOUNT}/account-service
         ports:
         - containerPort: 3000
