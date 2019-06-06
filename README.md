@@ -67,6 +67,10 @@ In order to automate updating first start jenkins, in the cloud shell
 ```
 kubectl apply -f jenkins/
 ```
+you may need to add extra nodes to you cluster, 4 should be enought but you could use more
+```
+gcloud container clusters resize [CLUSTER_NAME] --node-pool default-pool --num-nodes 4 --region [COMPUTE_REGION]
+```
 Head to the Jenkins load balancer IP address and sign in, initial admin password can be found in the jenkins pod logs
 ```
 kubectl logs [JENKINS_POD_NAME]
