@@ -47,11 +47,6 @@ kubectl apply -f services/
 kubectl apply -f gateway/
 ```
 once the gateway's load balancer is up it will be assigned an IP address and this must be put into the authentication-service-deployment.yaml
-``` 
-cd deployments/
-vim authentication-service-deployment.yaml
-```
-and replace IP in the ACTIVATION_LINK environment variable with the one generated for you
 ```
 export IP=[YOUR_IP_ADDRESS]
 ```
