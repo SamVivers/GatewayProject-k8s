@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: group-service
-        image: docker.io/samvivers/group-service
+        image: docker.io/${DOCKER.IO_ACCOUNT}/group-service
         ports:
         - containerPort: 3000
