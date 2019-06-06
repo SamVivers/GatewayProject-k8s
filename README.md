@@ -51,9 +51,10 @@ once the gateway's load balancer is up it will be assigned an IP address and thi
 cd deployments/
 vim authentication-service-deployment.yaml
 ```
-and replace my IP address in the ACTIVATION_LINK environment variable with the one generated for you
-![alt text](https://raw.githubusercontent.com/SamVivers/images/master/authentication-service-deployment.jpg)
-
+and replace IP in the ACTIVATION_LINK environment variable with the one generated for you
+```
+export IP=[YPUR_IP_ADDRESS]
+```
 then restart the deployments
 ```
 cd ../
